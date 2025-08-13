@@ -1,2 +1,14 @@
+# Dependency directory
 node_modules
-.DS_store
+
+# Optional npm cache directory
+.npm
+
+# Project npm config file
+.npmrc
+
+# MacOS
+.DS_Store
+
+# Build Data
+lib

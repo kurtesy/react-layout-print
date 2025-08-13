@@ -1,12 +1,12 @@
 {
-  "name": "react-layout-printer",
+  "name": "react-layout-print",
   "version": "1.0.0",
   "description": "A React component to print a DOM element with custom layouts and formats like PDF, JPEG, and SVG.",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.es.js",
+  "types": "lib/index.d.ts",
   "files": [
-    "dist"
+    "lib"
   ],
   "scripts": {
     "build": "vite build --config vite.config.js",
@@ -21,7 +21,7 @@
     "jspdf",
     "html-to-image"
   ],
-  "author": "Your Name",
+  "author": "Nishant Patel",
   "license": "MIT",
   "peerDependencies": {
     "react": ">=16.8.0",

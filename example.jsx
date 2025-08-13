@@ -42,7 +42,7 @@ function MyPrintableComponent() {
     return (
         <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
             <h1>React Layout Printer Example</h1>
-            <p>This is an example of using the `react-layout-printer` package.</p>
+            <p>This is an example of using the `react-layout-print` package.</p>
 
             <div ref={printableRef} style={{ width: '800px', height: '600px', border: '2px dashed #ccc', padding: '1rem', background: 'white', margin: '2rem 0' }}>
                 <h2>This is the content to be printed</h2>
