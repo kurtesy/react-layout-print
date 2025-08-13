@@ -1,29 +1,29 @@
-# react-layout-printer
+# react-layout-print
 
-[![npm version](https://img.shields.io/npm/v/react-layout-printer.svg)](https://www.npmjs.com/package/react-layout-printer)
-[![npm downloads](https://img.shields.io/npm/dm/react-layout-printer.svg)](https://www.npmjs.com/package/react-layout-printer)
-[![license](https://img.shields.io/npm/l/react-layout-printer.svg)](./LICENSE.md)
+[![npm version](https://img.shields.io/npm/v/react-layout-print.svg)](https://www.npmjs.com/package/react-layout-print)
+[![npm downloads](https://img.shields.io/npm/dm/react-layout-print.svg)](https://www.npmjs.com/package/react-layout-print)
+[![license](https://img.shields.io/npm/l/react-layout-print.svg)](./LICENSE.md)
 
-A simple and powerful React component to print your layouts and components.
+Print, preview, and export complex web page layouts to PDF, JPEG, and SVG. `react-layout-print` is a powerful React component designed for high-fidelity HTML to document conversions, making it perfectly suited for printing complex web pages.
 
-## Why `react-layout-printer`?
+## Why `react-layout-print`?
 
-- To provide a simple, lightweight, and powerful solution for printing React components.
-- To offer a flexible API that is easy to use and extend.
-- To ensure that what you see is what you get when printing.
+To provide a simple and powerful solution for printing complex React components and layouts, offering features like an interactive **print preview** and multiple export formats (PDF, JPEG, SVG). It's particularly well-suited for converting detailed HTML to high-quality PDF documents.
 
 ## Features
 
-- Print any React component.
-- Preserve layout and styling.
+- Print any React component or complex web page layout.
+- High-fidelity HTML to document conversion.
+- Interactive **Print Preview** modal before exporting to PDF.
+- Export to **PDF**, **JPEG**, and **SVG** formats.
+- Preserve layout and styling for accurate prints.
 - Trigger printing programmatically.
-- Hooks for before and after printing.
 - Lightweight and easy to use.
 
 ## Installation
 
 ```sh
-npm install --save react-layout-printer
+npm install --save react-layout-print
 ```
 
 or

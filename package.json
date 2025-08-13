@@ -1,7 +1,7 @@
 {
   "name": "react-layout-print",
   "version": "1.0.0",
-  "description": "A React component to print a DOM element with custom layouts and formats like PDF, JPEG, and SVG.",
+  "description": "A React component to print, preview, and export complex web page layouts to PDF, JPEG, and SVG. Ideal for HTML to PDF conversions.",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "types": "lib/index.d.ts",
@@ -18,8 +18,17 @@
     "pdf",
     "jpeg",
     "svg",
-    "jspdf",
-    "html-to-image"
+    "html-to-pdf",
+    "print-preview",
+    "react-to-pdf",
+    "react-component",
+    "print-component",
+    "layout-print",
+    "web-to-pdf",
+    "complex-layout",
+    "dom-to-pdf",
+    "dom-to-image",
+    "react-print"
   ],
   "author": "Nishant Patel",
   "license": "MIT",
