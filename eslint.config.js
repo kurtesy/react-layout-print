@@ -7,6 +7,9 @@ import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
     {
+        ignores: ["lib/"],
+    },
+    {
         files: ["**/*.{js,jsx}"],
         languageOptions: {
             parserOptions: {
@@ -34,8 +37,9 @@ export default [
             ...pluginReact.configs.recommended.rules,
             ...pluginReactHooks.configs.recommended.rules,
             ...pluginJsxA11y.configs.recommended.rules,
-            "react/react-in-jsx-scope": "off", // Not needed with modern React/Vite
+            "react/react-in-jsx-scope": "off",
+            "react/prop-types": "off"
         },
     },
-    eslintConfigPrettier, // Must be the last configuration
+    eslintConfigPrettier,
 ];

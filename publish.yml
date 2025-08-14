@@ -37,6 +37,10 @@ jobs:
       - name: Lint project
         run: npm run lint
 
+      # Runs the tests
+      - name: Test project
+        run: npm test
+
       # Runs the build script
       - name: Build package
         run: npm run build

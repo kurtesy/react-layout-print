@@ -206,11 +206,11 @@ export default function LayoutPrinter({
                     </div>
                 </div>
                 <div className='w-full flex items-center justify-center my-6 mt-12'>
-                    <div className='flex items-center h-[48px] rounded-[40px] overflow-hidden text-[14px] text-slate-700 font-semibold justify-center hover:scale-110 duration-300 mr-2' onClick={() => handlePrint(false)}>
+                    <div className='flex items-center h-[48px] rounded-[40px] overflow-hidden text-[14px] text-slate-700 font-semibold justify-center hover:scale-110 duration-300 mr-2' onClick={() => handlePrint(false)} onKeyDown={e => e.key === 'Enter' && handlePrint(false)} role="presentation">
                         <button id='generate' className='w-full h-full flex items-center bg-secondaryBlue text-slate-200 px-6 justify-center'><FaPrint /> Print It!</button>
                     </div>
                     {printFormat === 'pdf' && (
-                        <div className='flex items-center h-[48px] rounded-[40px] overflow-hidden text-[14px] text-slate-700 font-semibold justify-center hover:scale-110 duration-300' onClick={handlePreview}>
+                        <div className='flex items-center h-[48px] rounded-[40px] overflow-hidden text-[14px] text-slate-700 font-semibold justify-center hover:scale-110 duration-300' onClick={handlePreview} onKeyDown={e => e.key === 'Enter' && handlePreview()} role="presentation">
                             <button id='preview' className='w-full h-full flex items-center bg-secondaryBlue text-slate-200 px-6 justify-center'><HiDocumentMagnifyingGlass /> Print Preview!</button>
                         </div>
                     )}

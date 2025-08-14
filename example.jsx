@@ -3,17 +3,17 @@ import { createRoot } from 'react-dom/client';
 import LayoutPrinter from './src/LayoutPrinter.jsx'; // Import from source for example
 
 // Example components for PDF layout sections
-const SidePanel = ({ data, pageFormat }) => (
+const SidePanel = ({ data }) => (
     <div style={{ fontSize: '12px', padding: '10px', fontFamily: 'sans-serif' }}>
-        <h3>{data.title}</h3>
-        <p><strong>Client:</strong> {data.clientName}</p>
-        <p><strong>Location:</strong> {data.location}</p>
+        <h3>{data?.title}</h3>
+        <p><strong>Client:</strong> {data?.clientName}</p>
+        <p><strong>Location:</strong> {data?.location}</p>
         <hr />
         <p><em>This is a custom side panel.</em></p>
     </div>
 );
 
-const FooterPanel = ({ data, pageFormat, logoUrl }) => (
+const FooterPanel = ({ data, logoUrl }) => (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '5px', fontFamily: 'sans-serif' }}>
         <p><strong>Notes:</strong> {data.notes}</p>
         {logoUrl && <img src={logoUrl} alt="logo" style={{ width: '80px' }} />}

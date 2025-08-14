@@ -4,6 +4,7 @@
   "description": "A React component to print, preview, and export complex web page layouts to PDF, JPEG, and SVG. Ideal for HTML to PDF conversions.",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
+  "type": "module",
   "files": [
     "lib"
   ],
@@ -12,6 +13,7 @@
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint-fix": "eslint --fix --ext .js,.jsx .",
     "format": "prettier --write ."
   },
   "keywords": [
