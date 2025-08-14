@@ -32,6 +32,7 @@ export default function LayoutPrinter({
     darkMode = false,
     pageFormats: customPageFormats,
     printFormats: customPrintFormats,
+    onError,
 }) {
     const pageFormats = customPageFormats || ['a2', 'a3', 'a4', 'a5'];
     const printFormats = customPrintFormats || [
@@ -165,6 +166,9 @@ export default function LayoutPrinter({
         } catch (error) {
             console.error("Printing failed:", error);
             setLoading(false);
+            if (onError) {
+                onError(error);
+            }
         }
     };
 
@@ -244,4 +248,5 @@ LayoutPrinter.propTypes = {
         label: PropTypes.string.isRequired,
         disabled: PropTypes.bool.isRequired,
     })),
+    onError: PropTypes.func,
 };
