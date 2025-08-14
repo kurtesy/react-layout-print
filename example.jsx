@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { createRoot } from 'react-dom/client';
-import { LayoutPrinter } from './src/LayoutPrinter'; // Import from source for example
+import LayoutPrinter from './src/LayoutPrinter.jsx'; // Import from source for example
 
 // Example components for PDF layout sections
 const SidePanel = ({ data, pageFormat }) => (

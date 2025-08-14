@@ -1,4 +1,5 @@
 import React, { useState, cloneElement } from "react";
+import PropTypes from 'prop-types';
 import { FaPrint } from "react-icons/fa";
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiDocumentMagnifyingGlass } from "react-icons/hi2";
@@ -9,7 +10,11 @@ import Modal from 'react-modal';
 import { ScaleLoader } from 'react-spinners';
 import Iframe from 'react-iframe';
 
-Modal.setAppElement('#root');
+// For accessibility, it's important to set the app element for react-modal.
+// This should be done in the app's entry point, but we can do a safe check here.
+if (typeof window !== 'undefined' && document.getElementById('root')) {
+    Modal.setAppElement('#root');
+}
 
 const DefaultSidePanel = () => <div />;
 const DefaultFooterPanel = () => <div />;
@@ -44,7 +49,6 @@ export default function LayoutPrinter({
     const [loading, setLoading] = useState(false);
     const [blobUrl, setBlobUrl] = useState('');
 
-    const fontRatio = { 'a2': [12, 15, 9], 'a3': [10, 11, 7], 'a4': [7.5, 9, 5], 'a5': [4.8, 7, 3.5] };
     const facingDim = { 'a2': { w: 60, h: 60 }, 'a3': { w: 50, h: 50 }, 'a4': { w: 40, h: 40 }, 'a5': { w: 30, h: 30 } };
 
     const openModal = () => setIsOpen(true);
@@ -112,7 +116,7 @@ export default function LayoutPrinter({
 
             toJpeg(element, { quality: 1, backgroundColor: 'white', cacheBust: true })
                 .then(plotImgUrl => {
-                    if (facingImages[data[facingDataKey]]) {
+                    if (data && facingDataKey && facingImages && facingImages[data[facingDataKey]]) {
                         pdf.addImage(facingImages[data[facingDataKey]], 'PNG',
                             pageWidth * 0.77 - margin, pageHeight * 0.7 - margin,
                             facingDim[pageFormat].w, facingDim[pageFormat].h
@@ -223,3 +227,21 @@ export default function LayoutPrinter({
         </>
     );
 }
+
+LayoutPrinter.propTypes = {
+    children: PropTypes.element.isRequired,
+    elementRef: PropTypes.shape({ current: PropTypes.instanceOf(HTMLElement) }).isRequired,
+    fileName: PropTypes.string,
+    data: PropTypes.object,
+    SidePanelComponent: PropTypes.elementType,
+    FooterComponent: PropTypes.elementType,
+    logoUrl: PropTypes.string,
+    facingImages: PropTypes.object,
+    facingDataKey: PropTypes.string,
+    darkMode: PropTypes.bool,
+    pageFormats: PropTypes.arrayOf(PropTypes.string),
+    printFormats: PropTypes.arrayOf(PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        disabled: PropTypes.bool.isRequired,
+    })),
+};
